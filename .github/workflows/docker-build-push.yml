@@ -24,5 +24,5 @@ jobs:
         with:
           context: .
           push: true
-          tags: onurbolatogluu/show-req-header:latest
+          tags: onurbolatogluu/show-req-header:${{ github.sha }}
 
