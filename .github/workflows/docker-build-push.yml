@@ -26,5 +26,6 @@ jobs:
           push: true
           tags: onurbolatogluu/show-req-header:${{ github.sha }}
 
-      - name: Replace File
+
+      - name: Replace Image Tag
         run: sed -i 's/image: onurbolatogluu\/show-req-header:.*/image: onurbolatogluu\/show-req-header:${{ github.sha }}/g' kube/show-req-header-pod.yml
