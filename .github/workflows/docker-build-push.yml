@@ -26,12 +26,7 @@ jobs:
           push: true
           tags: onurbolatogluu/show-req-header:${{ github.sha }}
 
-      - name: Install yq
-        run: |
-          wget https://github.com/mikefarah/yq/releases/latest/download/yq_linux_amd64 -O /usr/local/bin/yq
-          chmod +x /usr/local/bin/yq
-
       - name: Update image tag
         run: |
-          sed -i "s|image: onurbolatogluu/show-req-header:.*|image: onurbolatogluu/show-req-header:${{ github.sha }}|" kube/show-req-header-pod.yml
+          sed -i "s/onurbolatogluu\/show-req-header:.*/onurbolatogluu\/show-req-header:${{ github.sha }}/g" kube/show-req-header-pod.yml
 
