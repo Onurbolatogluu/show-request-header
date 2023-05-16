@@ -27,8 +27,6 @@ jobs:
           tags: onurbolatogluu/show-req-header:${{ github.sha }}
 
       - name: Update image tag
-        uses: jaywcjlove/github-action-modify-file-content@main
-        with:
-          path: kube/show-req-header-pod.yml
-          search: 'image: onurbolatogluu/show-req-header:.*'
-          replace: 'image: onurbolatogluu/show-req-header:${{ github.sha }}'
+        run: |
+          sed -i "s|image: onurbolatogluu/show-req-header:.*|image: onurbolatogluu/show-req-header:${{ github.sha }}|" kube/show-req-header-pod.yml
+
