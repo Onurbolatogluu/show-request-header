@@ -27,7 +27,7 @@ jobs:
           tags: onurbolatogluu/show-req-header:${{ github.sha }}
 
       - name: Update image tag
-        uses: srt32/find-and-replace-action@v1
+        uses: jacobtomlinson/gha-find-replace@v3
         with:
           files: 'kube/show-req-header-pod.yml'
           from: 'onurbolatogluu/show-req-header:'
