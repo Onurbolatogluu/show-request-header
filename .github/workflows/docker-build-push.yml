@@ -32,5 +32,6 @@ jobs:
           chmod +x /usr/local/bin/yq
 
       - name: Update image tag
-        run: yq e '.spec.containers[0].image = "onurbolatogluu/show-req-header:${{ github.sha }}"' -i kube/show-req-header-pod.yml
+        run: |
+          yq eval '.spec.containers[0].image = "***/show-req-header:${{ github.sha }}"' -i kube/show-req-header-pod.yml
 
