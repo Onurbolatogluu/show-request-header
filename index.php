@@ -4,6 +4,6 @@ foreach (getallheaders() as $name => $value) {
 }
 
 echo "<br>";
-echo "Zaman: " . date("Y-m-d H:i:s") . "<br>";
+echo "Şu Zaman: " . date("Y-m-d H:i:s") . "<br>";
 
 ?>
