@@ -37,9 +37,3 @@ jobs:
         run: |
           sed -i "s/onurbolatogluu\/show-req-header:.*/onurbolatogluu\/show-req-header:${{ github.sha }}/g" kube/show-req-header-pod.yml
 
-      - name: Commit and push changes
-        run: |
-          git config --local user.email "bolatogluu@gmail.com"
-          git config --local user.name "onurbolatogluu"
-          git commit -a -m "Update image tag to ${{ github.sha }}"
-          git push
