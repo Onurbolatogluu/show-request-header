@@ -28,4 +28,5 @@ jobs:
 
 
       - name: Replace Image Tag
-        run: sed -i 's/image: onurbolatogluu\/show-req-header:.*/image: onurbolatogluu\/show-req-header:${{ github.sha }}/g' kube/show-req-header-pod.yml
+        run: sed -i 's/onurbolatogluu\/show-req-header:.*/onurbolatogluu\/show-req-header:${{ github.sha }}/g' kube/show-req-header-pod.yml
+
