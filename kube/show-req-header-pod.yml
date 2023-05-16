@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: show-req-header
+  labels:
+    app: show-req-header
+spec:
+  containers:
+    - name: show-req-header
+      image: onurbolatogluu/show-req-header:latest
+      ports:
+        - containerPort: 7000
