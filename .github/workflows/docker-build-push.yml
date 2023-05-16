@@ -1,6 +1,6 @@
 name: Docker Build & Push
 on:
-  pull:
+  push:
     branches:
       - master
     paths:
