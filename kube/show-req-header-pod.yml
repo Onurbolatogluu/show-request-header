@@ -7,6 +7,6 @@ metadata:
 spec:
   containers:
     - name: show-req-header
-      image: onurbolatogluu/show-req-header:7018db6055ec71212468abae157032d9a22e9a7d
+      image: onurbolatogluu/show-req-header:f8f8fabe6ca68cf5498a68c69c84a53e94361016
       ports:
         - containerPort: 7000
