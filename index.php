@@ -7,7 +7,7 @@ foreach (getallheaders() as $name => $value) {
 
 echo "<br>";
 echo "Tarih: " . date("Y-m-d H:i:s") . "<br>";
-echo "Rastgele Gezegen: " . $random_planet . "<br>"; // Rastgele gezegeni yazdırma
+echo "Random Gezegen: " . $random_planet . "<br>"; // Rastgele gezegeni yazdırma
 ?>
 
 
