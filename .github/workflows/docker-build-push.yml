@@ -33,5 +33,5 @@ jobs:
 
       - name: Update image tag
         run: |
-          yq eval '.spec.containers[0].image = "***/show-req-header:${{ github.sha }}"' -i kube/show-req-header-pod.yml
+          sed -i "s|image: onurbolatogluu/show-req-header:.*|image: onurbolatogluu/show-req-header:${{ github.sha }}|" kube/show-req-header-pod.yml
 
