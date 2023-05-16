@@ -30,3 +30,11 @@ jobs:
         run: |
           cat kube/show-req-header-pod.yml
 
+      - name: Update image tag
+        run: |
+          awk -v sha=${{ github.sha }} '/image:/ {sub(/:.*/,"", $2); print $1 " " $2 ":" sha; next} 1' kube/show-req-header-pod.yml > tmp && mv tmp kube/show-req-header-pod.yml
+
+      - name: Print pod file2
+        run: |
+          cat kube/show-req-header-pod.yml
+
