@@ -28,11 +28,9 @@ jobs:
 
       - name: Install yq
         run: |
-          wget https://github.com/mikefarah/yq/releases/download/v4.13.2/yq_linux_amd64.tar.gz -O yq.tar.gz
-          tar xzf yq.tar.gz
-          sudo mv yq /usr/local/bin/
+          wget https://github.com/mikefarah/yq/releases/latest/download/yq_linux_amd64 -O /usr/local/bin/yq
+          chmod +x /usr/local/bin/yq
 
       - name: Update image tag
-        run: yq eval --inplace '.spec.containers[0].image = "onurbolatogluu/show-req-header:${{ github.sha }}"' kube/show-req-header-pod.yml
-
+        run: yq e '.spec.containers[0].image = "onurbolatogluu/show-req-header:${{ github.sha }}"' -i kube/show-req-header-pod.yml
 
